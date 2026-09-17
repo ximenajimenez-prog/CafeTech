@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CaféTech | Café y Tecnología</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f5f2;
+            color: #2d2420;
+        }
+
+
+        /* ================= MENU ================= */
+
+        nav {
+            width: 100%;
+            padding: 18px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background-color: #241812;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #d6a56a;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #d6a56a;
+        }
+
+
+        /* ================= INICIO ================= */
+
+        #inicio {
+            min-height: 600px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 50px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(36, 24, 18, 0.85),
+                    rgba(111, 78, 55, 0.85)
+                ),
+                url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+        }
+
+        .contenido-inicio {
+            max-width: 750px;
+        }
+
+        .contenido-inicio h1 {
+            font-size: 70px;
+            margin-bottom: 20px;
+        }
+
+        .contenido-inicio h1 span {
+            color: #d6a56a;
+        }
+
+        .contenido-inicio p {
+            font-size: 22px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+
+        .boton {
+            display: inline-block;
+
+            background-color: #d6a56a;
+            color: white;
+
+            text-decoration: none;
+
+            padding: 16px 30px;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            background-color: white;
+            color: #6f4e37;
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+
+        /* ================= SERVICIOS ================= */
+
+        #servicios {
+            padding: 90px 8%;
+            text-align: center;
+        }
+
+        .titulo-seccion {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .subtitulo {
+            color: #777;
+            margin-bottom: 50px;
+            font-size: 18px;
+        }
+
+        .contenedor-servicios {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .servicio {
+            width: 300px;
+
+            background-color: white;
+
+            padding: 40px 25px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .servicio:hover {
+            transform: translateY(-10px);
+
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .icono {
+            width: 80px;
+            height: 80px;
+
+            margin: 0 auto 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background-color: #f2e3d5;
+
+            font-size: 35px;
+        }
+
+        .servicio h3 {
+            color: #6f4e37;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .servicio p {
+            line-height: 1.6;
+            color: #666;
+        }
+
+
+        /* ================= NOSOTROS ================= */
+
+        #nosotros {
+            padding: 90px 8%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+
+            flex-wrap: wrap;
+
+            background-color: #e8d8c3;
+        }
+
+        .nosotros-texto {
+            max-width: 500px;
+        }
+
+        .nosotros-texto h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .nosotros-texto p {
+            line-height: 1.8;
+            color: #5a4a42;
+            font-size: 17px;
+        }
+
+        .imagen-nosotros {
+            width: 400px;
+            max-width: 100%;
+
+            border-radius: 25px;
+
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* ================= ESTADISTICAS ================= */
+
+        #estadisticas {
+            padding: 60px 8%;
+
+            background-color: #6f4e37;
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+
+            flex-wrap: wrap;
+
+            text-align: center;
+        }
+
+        .dato h2 {
+            font-size: 40px;
+            color: #d6a56a;
+        }
+
+        .dato p {
+            margin-top: 8px;
+        }
+
+
+        /* ================= CONTACTO ================= */
+
+        #contacto {
+            padding: 90px 8%;
+            text-align: center;
+
+            background-color: #241812;
+            color: white;
+        }
+
+        #contacto h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        #contacto > p {
+            color: #d6a56a;
+            margin-bottom: 40px;
+        }
+
+        .contenedor-contacto {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contacto-item {
+            width: 230px;
+
+            padding: 25px;
+
+            border: 1px solid rgba(255, 255, 255, 0.2);
+
+            border-radius: 15px;
+
+            transition: 0.3s;
+        }
+
+        .contacto-item:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+
+            transform: translateY(-5px);
+        }
+
+        .contacto-item h3 {
+            color: #d6a56a;
+            margin-bottom: 10px;
+        }
+
+        .contacto-item p {
+            font-size: 15px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background-color: #160e0b;
+
+            color: #aaa;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .contenido-inicio h1 {
+                font-size: 45px;
+            }
+
+            .contenido-inicio p {
+                font-size: 18px;
+            }
+
+            #nosotros {
+                text-align: center;
+            }
+
+            #estadisticas {
+                gap: 40px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- MENU -->
+
+    <nav>
+
+        <div class="logo">
+            Café<span>Tech</span>
+        </div>
+
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- INICIO -->
+
+    <section id="inicio">
+
+        <div class="contenido-inicio">
+
+            <h1>
+                Café<span>Tech</span>
+            </h1>
+
+            <p>
+                Un espacio donde el aroma del café se conecta
+                con las mejores ideas y la tecnología.
+            </p>
+
+            <a href="#servicios" class="boton">
+                Descubre más
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICIOS -->
+
+    <section id="servicios">
+
+        <h2 class="titulo-seccion">
+            Nuestros Servicios
+        </h2>
+
+        <p class="subtitulo">
+            Todo lo que necesitas para disfrutar, trabajar y crear.
+        </p>
+
+
+        <div class="contenedor-servicios">
+
+
+            <div class="servicio">
+
+                <div class="icono">☕</div>
+
+                <h3>Café Especial</h3>
+
+                <p>
+                    Disfruta diferentes tipos de café preparados
+                    con ingredientes de excelente calidad.
+                </p>
+
+            </div>
+
+
+            <div class="servicio">
+
+                <div class="icono">💻</div>
+
+                <h3>Zona de Trabajo</h3>
+
+                <p>
+                    Espacios cómodos para estudiar, trabajar
+                    y desarrollar tus mejores ideas.
+                </p>
+
+            </div>
+
+
+            <div class="servicio">
+
+                <div class="icono">📶</div>
+
+                <h3>WiFi Gratis</h3>
+
+                <p>
+                    Mantente conectado con internet de alta
+                    velocidad mientras disfrutas tu café.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- NOSOTROS -->
+
+    <section id="nosotros">
+
+        <div class="nosotros-texto">
+
+            <h2>Más que una cafetería</h2>
+
+            <p>
+                CaféTech es un espacio pensado para estudiantes,
+                emprendedores y amantes de la tecnología.
+                Queremos crear un ambiente donde puedas disfrutar
+                de un buen café mientras estudias, trabajas,
+                compartes ideas y creas nuevos proyectos.
+            </p>
+
+        </div>
+
+
+        <img
+            class="imagen-nosotros"
+            src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80"
+            alt="Personas trabajando"
+        >
+
+    </section>
+
+
+    <!-- ESTADISTICAS -->
+
+    <section id="estadisticas">
+
+        <div class="dato">
+            <h2>+500</h2>
+            <p>Clientes felices</p>
+        </div>
+
+        <div class="dato">
+            <h2>+20</h2>
+            <p>Tipos de café</p>
+        </div>
+
+        <div class="dato">
+            <h2>100%</h2>
+            <p>Espacio para crear</p>
+        </div>
+
+    </section>
+
+
+    <!-- CONTACTO -->
+
+    <section id="contacto">
+
+        <h2>Contáctanos</h2>
+
+        <p>
+            ¡Ven y disfruta la experiencia CaféTech!
+        </p>
+
+
+        <div class="contenedor-contacto">
+
+
+            <div class="contacto-item">
+
+                <h3>📍 Dirección</h3>
+
+                <p>
+                    Medellín, Antioquia
+                </p>
+
+            </div>
+
+
+            <div class="contacto-item">
+
+                <h3>📞 Teléfono</h3>
+
+                <p>
+                    +57 300 123 4567
+                </p>
+
+            </div>
+
+
+            <div class="contacto-item">
+
+                <h3>📧 Correo</h3>
+
+                <p>
+                    contacto@cafetech.com
+                </p>
+
+            </div>
+
+
+            <div class="contacto-item">
+
+                <h3>📱 Redes</h3>
+
+                <p>
+                    @CafeTech
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 CaféTech | Café, ideas y tecnología ☕💻
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+```
+index.html
+Mostrando index.html
